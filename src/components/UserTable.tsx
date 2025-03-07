@@ -39,7 +39,7 @@ const rows = [
   {
     id: 'INV-1234',
     name: 'Olivia Ryhe',
-    role:'CTO',
+    role: 'Chief Technology Officer (CTO)',
     Email: {
       initial: 'O',
       email: 'olivia@email.com',
@@ -48,7 +48,7 @@ const rows = [
   {
     id: 'INV-1233',
     name: 'Steve Hampton',
-    role:'CTO',
+    role: 'Software Engineer',
     Email: {
       initial: 'S',
       email: 'steve.hamp@email.com',
@@ -57,7 +57,7 @@ const rows = [
   {
     id: 'INV-1232',
     name: 'Ciaran Murray',
-    role:'CTO',
+    role: 'Project Manager',
     Email: {
       initial: 'C',
       email: 'ciaran.murray@email.com',
@@ -66,7 +66,7 @@ const rows = [
   {
     id: 'INV-1231',
     name: 'Maria Macdonald',
-    role:'CTO',
+    role: 'HR Manager',
     Email: {
       initial: 'M',
       email: 'maria.mc@email.com',
@@ -75,7 +75,7 @@ const rows = [
   {
     id: 'INV-1230',
     name: 'Charles Fulton',
-    role:'CTO',
+    role: 'Data Analyst',
     Email: {
       initial: 'C',
       email: 'fulton@email.com',
@@ -84,7 +84,7 @@ const rows = [
   {
     id: 'INV-1229',
     name: 'Jay Hooper',
-    role:'CTO',
+    role: 'Marketing Specialist',
     Email: {
       initial: 'J',
       email: 'hooper@email.com',
@@ -93,7 +93,7 @@ const rows = [
   {
     id: 'INV-1228',
     name: 'Krystal Stevens',
-    role:'CTO',
+    role: 'Product Manager',
     Email: {
       initial: 'K',
       email: 'k.stevens@email.com',
@@ -102,7 +102,7 @@ const rows = [
   {
     id: 'INV-1227',
     name: 'Sachin Flynn',
-    role:'CTO',
+    role: 'IT Support Specialist',
     Email: {
       initial: 'S',
       email: 's.flyn@email.com',
@@ -111,7 +111,7 @@ const rows = [
   {
     id: 'INV-1226',
     name: 'Bradley Rosales',
-    role:'CTO',
+    role: 'Security Analyst',
     Email: {
       initial: 'B',
       email: 'brad123@email.com',
@@ -120,7 +120,7 @@ const rows = [
   {
     id: 'INV-1225',
     name: 'Olivia Ryhe',
-    role:'CTO',
+    role: 'Finance Manager',
     Email: {
       initial: 'O',
       email: 'olivia@email.com',
@@ -129,7 +129,7 @@ const rows = [
   {
     id: 'INV-1224',
     name: 'Steve Hampton',
-    role:'CTO',
+    role: 'Backend Developer',
     Email: {
       initial: 'S',
       email: 'steve.hamp@email.com',
@@ -138,7 +138,7 @@ const rows = [
   {
     id: 'INV-1223',
     name: 'Ciaran Murray',
-    role:'CTO',
+    role: 'UI/UX Designer',
     Email: {
       initial: 'C',
       email: 'ciaran.murray@email.com',
@@ -147,7 +147,7 @@ const rows = [
   {
     id: 'INV-1221',
     name: 'Maria Macdonald',
-    role:'CTO',
+    role: 'Operations Manager',
     Email: {
       initial: 'M',
       email: 'maria.mc@email.com',
@@ -156,7 +156,7 @@ const rows = [
   {
     id: 'INV-1220',
     name: 'Charles Fulton',
-    role:'CTO',
+    role: 'Business Analyst',
     Email: {
       initial: 'C',
       email: 'fulton@email.com',
@@ -165,7 +165,7 @@ const rows = [
   {
     id: 'INV-1219',
     name: 'Jay Hooper',
-    role:'CTO',
+    role: 'Content Strategist',
     Email: {
       initial: 'J',
       email: 'hooper@email.com',
@@ -174,7 +174,7 @@ const rows = [
   {
     id: 'INV-1218',
     name: 'Krystal Stevens',
-    role:'CTO',
+    role: 'DevOps Engineer',
     Email: {
       initial: 'K',
       email: 'k.stevens@email.com',
@@ -183,7 +183,7 @@ const rows = [
   {
     id: 'INV-1217',
     name: 'Sachin Flynn',
-    role:'CTO',
+    role: 'Network Administrator',
     Email: {
       initial: 'S',
       email: 's.flyn@email.com',
@@ -192,13 +192,14 @@ const rows = [
   {
     id: 'INV-1216',
     name: 'Bradley Rosales',
-    role:'CTO',
+    role: 'Legal Advisor',
     Email: {
       initial: 'B',
       email: 'brad123@email.com',
     },
   },
 ];
+
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   if (b[orderBy] < a[orderBy]) {
@@ -236,6 +237,7 @@ function RowMenu() {
       <Menu size="sm" sx={{ minWidth: 140 }}>
         <MenuItem>Edit</MenuItem>
         <MenuItem>Rename</MenuItem>
+        <MenuItem style={{color: 'red'}}>Delete</MenuItem>
       </Menu>
     </Dropdown>
   );
@@ -247,24 +249,9 @@ export default function OrderTable() {
   const renderFilters = () => (
     <React.Fragment>
       <FormControl size="sm">
-        <FormLabel>Category</FormLabel>
+        <FormLabel>Filter</FormLabel>
         <Select size="sm" placeholder="All">
-          <Option value="all">All</Option>
-          <Option value="refund">Refund</Option>
-          <Option value="purchase">Purchase</Option>
-          <Option value="debit">Debit</Option>
-        </Select>
-      </FormControl>
-      <FormControl size="sm">
-        <FormLabel>Email</FormLabel>
-        <Select size="sm" placeholder="All">
-          <Option value="all">All</Option>
-          <Option value="olivia">Olivia Rhye</Option>
-          <Option value="steve">Steve Hampton</Option>
-          <Option value="ciaran">Ciaran Murray</Option>
-          <Option value="marina">Marina Macdonald</Option>
-          <Option value="charles">Charles Fulton</Option>
-          <Option value="jay">Jay Hoper</Option>
+          <Option value="all">by Role</Option>
         </Select>
       </FormControl>
     </React.Fragment>
@@ -274,7 +261,7 @@ export default function OrderTable() {
       <Sheet
         className="SearchAndFilters-mobile"
         sx={{ display: { xs: 'flex', sm: 'none' }, my: 1, gap: 1 }}
-      >
+       >
         <Input
           size="sm"
           placeholder="Search"
@@ -305,6 +292,7 @@ export default function OrderTable() {
           </ModalDialog>
         </Modal>
       </Sheet>
+
       <Box
         className="SearchAndFilters-tabletUp"
         sx={{
@@ -319,7 +307,7 @@ export default function OrderTable() {
         }}
       >
         <FormControl sx={{ flex: 1 }} size="sm">
-          <FormLabel>Search for order</FormLabel>
+          <FormLabel>Search for user</FormLabel>
           <Input size="sm" placeholder="Search" startDecorator={<SearchIcon />} />
         </FormControl>
         {renderFilters()}
@@ -370,30 +358,7 @@ export default function OrderTable() {
                   sx={{ verticalAlign: 'text-bottom' }}
                 />
               </th>
-              <th style={{ width: 120, padding: '12px 6px' }}>
-                <Link
-                  underline="none"
-                  color="primary"
-                  component="button"
-                  onClick={() => setOrder(order === 'asc' ? 'desc' : 'asc')}
-                  endDecorator={<ArrowDropDownIcon />}
-                  sx={[
-                    {
-                      fontWeight: 'lg',
-                      '& svg': {
-                        transition: '0.2s',
-                        transform:
-                          order === 'desc' ? 'rotate(0deg)' : 'rotate(180deg)',
-                      },
-                    },
-                    order === 'desc'
-                      ? { '& svg': { transform: 'rotate(0deg)' } }
-                      : { '& svg': { transform: 'rotate(180deg)' } },
-                  ]}
-                >
-                  Name
-                </Link>
-              </th>
+              <th style={{ width: 140, padding: '12px 6px' }}>Name</th>
               <th style={{ width: 140, padding: '12px 6px' }}>Role</th>
               <th style={{ width: 240, padding: '12px 6px' }}>Email</th>
               <th style={{ width: 140, padding: '12px 6px' }}> </th>
@@ -448,6 +413,7 @@ export default function OrderTable() {
       <Box
         className="Pagination-laptopUp"
         sx={{
+          zIndex: 10,
           pt: 2,
           gap: 1,
           [`& .${iconButtonClasses.root}`]: { borderRadius: '50%' },
@@ -455,6 +421,7 @@ export default function OrderTable() {
             xs: 'none',
             md: 'flex',
           },
+
         }}
       >
         <Button
