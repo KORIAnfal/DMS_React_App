@@ -39,6 +39,7 @@ const rows = [
   {
     id: 'INV-1234',
     name: 'Olivia Ryhe',
+    role:'CTO',
     Email: {
       initial: 'O',
       email: 'olivia@email.com',
@@ -47,6 +48,7 @@ const rows = [
   {
     id: 'INV-1233',
     name: 'Steve Hampton',
+    role:'CTO',
     Email: {
       initial: 'S',
       email: 'steve.hamp@email.com',
@@ -55,6 +57,7 @@ const rows = [
   {
     id: 'INV-1232',
     name: 'Ciaran Murray',
+    role:'CTO',
     Email: {
       initial: 'C',
       email: 'ciaran.murray@email.com',
@@ -63,6 +66,7 @@ const rows = [
   {
     id: 'INV-1231',
     name: 'Maria Macdonald',
+    role:'CTO',
     Email: {
       initial: 'M',
       email: 'maria.mc@email.com',
@@ -71,6 +75,7 @@ const rows = [
   {
     id: 'INV-1230',
     name: 'Charles Fulton',
+    role:'CTO',
     Email: {
       initial: 'C',
       email: 'fulton@email.com',
@@ -79,6 +84,7 @@ const rows = [
   {
     id: 'INV-1229',
     name: 'Jay Hooper',
+    role:'CTO',
     Email: {
       initial: 'J',
       email: 'hooper@email.com',
@@ -87,6 +93,7 @@ const rows = [
   {
     id: 'INV-1228',
     name: 'Krystal Stevens',
+    role:'CTO',
     Email: {
       initial: 'K',
       email: 'k.stevens@email.com',
@@ -95,6 +102,7 @@ const rows = [
   {
     id: 'INV-1227',
     name: 'Sachin Flynn',
+    role:'CTO',
     Email: {
       initial: 'S',
       email: 's.flyn@email.com',
@@ -103,6 +111,7 @@ const rows = [
   {
     id: 'INV-1226',
     name: 'Bradley Rosales',
+    role:'CTO',
     Email: {
       initial: 'B',
       email: 'brad123@email.com',
@@ -111,6 +120,7 @@ const rows = [
   {
     id: 'INV-1225',
     name: 'Olivia Ryhe',
+    role:'CTO',
     Email: {
       initial: 'O',
       email: 'olivia@email.com',
@@ -119,6 +129,7 @@ const rows = [
   {
     id: 'INV-1224',
     name: 'Steve Hampton',
+    role:'CTO',
     Email: {
       initial: 'S',
       email: 'steve.hamp@email.com',
@@ -127,6 +138,7 @@ const rows = [
   {
     id: 'INV-1223',
     name: 'Ciaran Murray',
+    role:'CTO',
     Email: {
       initial: 'C',
       email: 'ciaran.murray@email.com',
@@ -135,6 +147,7 @@ const rows = [
   {
     id: 'INV-1221',
     name: 'Maria Macdonald',
+    role:'CTO',
     Email: {
       initial: 'M',
       email: 'maria.mc@email.com',
@@ -143,6 +156,7 @@ const rows = [
   {
     id: 'INV-1220',
     name: 'Charles Fulton',
+    role:'CTO',
     Email: {
       initial: 'C',
       email: 'fulton@email.com',
@@ -151,6 +165,7 @@ const rows = [
   {
     id: 'INV-1219',
     name: 'Jay Hooper',
+    role:'CTO',
     Email: {
       initial: 'J',
       email: 'hooper@email.com',
@@ -159,6 +174,7 @@ const rows = [
   {
     id: 'INV-1218',
     name: 'Krystal Stevens',
+    role:'CTO',
     Email: {
       initial: 'K',
       email: 'k.stevens@email.com',
@@ -167,6 +183,7 @@ const rows = [
   {
     id: 'INV-1217',
     name: 'Sachin Flynn',
+    role:'CTO',
     Email: {
       initial: 'S',
       email: 's.flyn@email.com',
@@ -175,6 +192,7 @@ const rows = [
   {
     id: 'INV-1216',
     name: 'Bradley Rosales',
+    role:'CTO',
     Email: {
       initial: 'B',
       email: 'brad123@email.com',
@@ -401,10 +419,10 @@ export default function OrderTable() {
                   />
                 </td>
                 <td>
-                  <Typography level="body-xs">{row.id}</Typography>
+                  <Typography level="body-xs">{row.name}</Typography>
                 </td>
                 <td>
-                  <Typography level="body-xs">{row.name}</Typography>
+                  <Typography level="body-xs">{row.role}</Typography>
                 </td>
                 <td>
                   <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
