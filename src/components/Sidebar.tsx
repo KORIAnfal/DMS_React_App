@@ -268,8 +268,19 @@ export default function Sidebar() {
           </Button>
         </Card>
       </Box>
-      <Divider />
-      <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+      
+      <Box sx={{
+    display: "flex",
+    alignItems: "center",
+    gap: 1,
+    p: 2,
+    borderTop: "1px solid",
+    borderColor: "divider",
+    position: "sticky",
+    bottom: 0,
+    backgroundColor: "background.body",
+    zIndex: 10, // Ensures it stays above scrolling content
+  }}>
         <Avatar
           variant="outlined"
           size="sm"

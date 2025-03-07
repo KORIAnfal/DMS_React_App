@@ -38,181 +38,145 @@ import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 const rows = [
   {
     id: 'INV-1234',
-    date: 'Feb 3, 2023',
-    status: 'Refunded',
-    customer: {
+    name: 'Olivia Ryhe',
+    Email: {
       initial: 'O',
-      name: 'Olivia Ryhe',
       email: 'olivia@email.com',
     },
   },
   {
     id: 'INV-1233',
-    date: 'Feb 3, 2023',
-    status: 'Paid',
-    customer: {
+    name: 'Steve Hampton',
+    Email: {
       initial: 'S',
-      name: 'Steve Hampton',
       email: 'steve.hamp@email.com',
     },
   },
   {
     id: 'INV-1232',
-    date: 'Feb 3, 2023',
-    status: 'Refunded',
-    customer: {
+    name: 'Ciaran Murray',
+    Email: {
       initial: 'C',
-      name: 'Ciaran Murray',
       email: 'ciaran.murray@email.com',
     },
   },
   {
     id: 'INV-1231',
-    date: 'Feb 3, 2023',
-    status: 'Refunded',
-    customer: {
+    name: 'Maria Macdonald',
+    Email: {
       initial: 'M',
-      name: 'Maria Macdonald',
       email: 'maria.mc@email.com',
     },
   },
   {
     id: 'INV-1230',
-    date: 'Feb 3, 2023',
-    status: 'Cancelled',
-    customer: {
+    name: 'Charles Fulton',
+    Email: {
       initial: 'C',
-      name: 'Charles Fulton',
       email: 'fulton@email.com',
     },
   },
   {
     id: 'INV-1229',
-    date: 'Feb 3, 2023',
-    status: 'Cancelled',
-    customer: {
+    name: 'Jay Hooper',
+    Email: {
       initial: 'J',
-      name: 'Jay Hooper',
       email: 'hooper@email.com',
     },
   },
   {
     id: 'INV-1228',
-    date: 'Feb 3, 2023',
-    status: 'Refunded',
-    customer: {
+    name: 'Krystal Stevens',
+    Email: {
       initial: 'K',
-      name: 'Krystal Stevens',
       email: 'k.stevens@email.com',
     },
   },
   {
     id: 'INV-1227',
-    date: 'Feb 3, 2023',
-    status: 'Paid',
-    customer: {
+    name: 'Sachin Flynn',
+    Email: {
       initial: 'S',
-      name: 'Sachin Flynn',
       email: 's.flyn@email.com',
     },
   },
   {
     id: 'INV-1226',
-    date: 'Feb 3, 2023',
-    status: 'Cancelled',
-    customer: {
+    name: 'Bradley Rosales',
+    Email: {
       initial: 'B',
-      name: 'Bradley Rosales',
       email: 'brad123@email.com',
     },
   },
   {
     id: 'INV-1225',
-    date: 'Feb 3, 2023',
-    status: 'Paid',
-    customer: {
+    name: 'Olivia Ryhe',
+    Email: {
       initial: 'O',
-      name: 'Olivia Ryhe',
       email: 'olivia@email.com',
     },
   },
   {
     id: 'INV-1224',
-    date: 'Feb 3, 2023',
-    status: 'Cancelled',
-    customer: {
+    name: 'Steve Hampton',
+    Email: {
       initial: 'S',
-      name: 'Steve Hampton',
       email: 'steve.hamp@email.com',
     },
   },
   {
     id: 'INV-1223',
-    date: 'Feb 3, 2023',
-    status: 'Paid',
-    customer: {
+    name: 'Ciaran Murray',
+    Email: {
       initial: 'C',
-      name: 'Ciaran Murray',
       email: 'ciaran.murray@email.com',
     },
   },
   {
     id: 'INV-1221',
-    date: 'Feb 3, 2023',
-    status: 'Refunded',
-    customer: {
+    name: 'Maria Macdonald',
+    Email: {
       initial: 'M',
-      name: 'Maria Macdonald',
       email: 'maria.mc@email.com',
     },
   },
   {
     id: 'INV-1220',
-    date: 'Feb 3, 2023',
-    status: 'Paid',
-    customer: {
+    name: 'Charles Fulton',
+    Email: {
       initial: 'C',
-      name: 'Charles Fulton',
       email: 'fulton@email.com',
     },
   },
   {
     id: 'INV-1219',
-    date: 'Feb 3, 2023',
-    status: 'Cancelled',
-    customer: {
+    name: 'Jay Hooper',
+    Email: {
       initial: 'J',
-      name: 'Jay Hooper',
       email: 'hooper@email.com',
     },
   },
   {
     id: 'INV-1218',
-    date: 'Feb 3, 2023',
-    status: 'Cancelled',
-    customer: {
+    name: 'Krystal Stevens',
+    Email: {
       initial: 'K',
-      name: 'Krystal Stevens',
       email: 'k.stevens@email.com',
     },
   },
   {
     id: 'INV-1217',
-    date: 'Feb 3, 2023',
-    status: 'Paid',
-    customer: {
+    name: 'Sachin Flynn',
+    Email: {
       initial: 'S',
-      name: 'Sachin Flynn',
       email: 's.flyn@email.com',
     },
   },
   {
     id: 'INV-1216',
-    date: 'Feb 3, 2023',
-    status: 'Cancelled',
-    customer: {
+    name: 'Bradley Rosales',
+    Email: {
       initial: 'B',
-      name: 'Bradley Rosales',
       email: 'brad123@email.com',
     },
   },
@@ -254,9 +218,6 @@ function RowMenu() {
       <Menu size="sm" sx={{ minWidth: 140 }}>
         <MenuItem>Edit</MenuItem>
         <MenuItem>Rename</MenuItem>
-        <MenuItem>Move</MenuItem>
-        <Divider />
-        <MenuItem color="danger">Delete</MenuItem>
       </Menu>
     </Dropdown>
   );
@@ -268,19 +229,6 @@ export default function OrderTable() {
   const renderFilters = () => (
     <React.Fragment>
       <FormControl size="sm">
-        <FormLabel>Status</FormLabel>
-        <Select
-          size="sm"
-          placeholder="Filter by status"
-          slotProps={{ button: { sx: { whiteSpace: 'nowrap' } } }}
-        >
-          <Option value="paid">Paid</Option>
-          <Option value="pending">Pending</Option>
-          <Option value="refunded">Refunded</Option>
-          <Option value="cancelled">Cancelled</Option>
-        </Select>
-      </FormControl>
-      <FormControl size="sm">
         <FormLabel>Category</FormLabel>
         <Select size="sm" placeholder="All">
           <Option value="all">All</Option>
@@ -290,7 +238,7 @@ export default function OrderTable() {
         </Select>
       </FormControl>
       <FormControl size="sm">
-        <FormLabel>Customer</FormLabel>
+        <FormLabel>Email</FormLabel>
         <Select size="sm" placeholder="All">
           <Option value="all">All</Option>
           <Option value="olivia">Olivia Rhye</Option>
@@ -425,12 +373,11 @@ export default function OrderTable() {
                       : { '& svg': { transform: 'rotate(180deg)' } },
                   ]}
                 >
-                  Invoice
+                  Name
                 </Link>
               </th>
-              <th style={{ width: 140, padding: '12px 6px' }}>Date</th>
-              <th style={{ width: 140, padding: '12px 6px' }}>Status</th>
-              <th style={{ width: 240, padding: '12px 6px' }}>Customer</th>
+              <th style={{ width: 140, padding: '12px 6px' }}>Role</th>
+              <th style={{ width: 240, padding: '12px 6px' }}>Email</th>
               <th style={{ width: 140, padding: '12px 6px' }}> </th>
             </tr>
           </thead>
@@ -457,43 +404,20 @@ export default function OrderTable() {
                   <Typography level="body-xs">{row.id}</Typography>
                 </td>
                 <td>
-                  <Typography level="body-xs">{row.date}</Typography>
-                </td>
-                <td>
-                  <Chip
-                    variant="soft"
-                    size="sm"
-                    startDecorator={
-                      {
-                        Paid: <CheckRoundedIcon />,
-                        Refunded: <AutorenewRoundedIcon />,
-                        Cancelled: <BlockIcon />,
-                      }[row.status]
-                    }
-                    color={
-                      {
-                        Paid: 'success',
-                        Refunded: 'neutral',
-                        Cancelled: 'danger',
-                      }[row.status] as ColorPaletteProp
-                    }
-                  >
-                    {row.status}
-                  </Chip>
+                  <Typography level="body-xs">{row.name}</Typography>
                 </td>
                 <td>
                   <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
-                    <Avatar size="sm">{row.customer.initial}</Avatar>
+                    <Avatar size="sm">{row.Email.initial}</Avatar>
                     <div>
-                      <Typography level="body-xs">{row.customer.name}</Typography>
-                      <Typography level="body-xs">{row.customer.email}</Typography>
+                      <Typography level="body-xs">{row.Email.email}</Typography>
                     </div>
                   </Box>
                 </td>
                 <td>
                   <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
                     <Link level="body-xs" component="button">
-                      Download
+                      Details
                     </Link>
                     <RowMenu />
                   </Box>
