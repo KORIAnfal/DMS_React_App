@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
 import { CssVarsProvider, extendTheme, useColorScheme } from "@mui/joy/styles";
 import GlobalStyles from "@mui/joy/GlobalStyles";
 import CssBaseline from "@mui/joy/CssBaseline";
@@ -23,35 +25,26 @@ interface FormElements extends HTMLFormControlsCollection {
   password: HTMLInputElement;
   persistent: HTMLInputElement;
 }
+
 interface SignInFormElement extends HTMLFormElement {
   readonly elements: FormElements;
 }
 
-function ColorSchemeToggle(props: IconButtonProps) {
-  const { onClick, ...other } = props;
-  const { mode, setMode } = useColorScheme();
-  const [mounted, setMounted] = React.useState(false);
 
-  React.useEffect(() => setMounted(true), []);
+export default function Login() {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  return (
-    <IconButton
-      aria-label="toggle light/dark mode"
-      size="sm"
-      variant="outlined"
-      disabled={!mounted}
-      onClick={(event) => {
-        setMode(mode === "light" ? "dark" : "light");
-        onClick?.(event);
-      }}
-      {...other}
-    >
-      {mode === "light" ? <DarkModeRoundedIcon /> : <LightModeRoundedIcon />}
-    </IconButton>
-  );
-}
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (email === "admin@dmsgo.com" && password === "123") {
+      navigate("/dashboard"); 
+    } else {
+      alert("Invalid login credentials!");
+    }
+  };
 
-export default function JoySignInSideTemplate() {
   return (
     <CssVarsProvider disableTransitionOnChange>
       <CssBaseline />
@@ -59,7 +52,7 @@ export default function JoySignInSideTemplate() {
         styles={{
           ":root": {
             "--Form-maxWidth": "800px",
-            "--Transition-duration": "0.4s", // set to `none` to disable transition
+            "--Transition-duration": "0.4s", 
           },
         }}
       />
@@ -138,30 +131,25 @@ export default function JoySignInSideTemplate() {
 
             <Stack sx={{ gap: 5, mt: 3 }}>
               <form
-                onSubmit={(event: React.FormEvent<SignInFormElement>) => {
-                  event.preventDefault();
-                  const formElements = event.currentTarget.elements;
-                  const data = {
-                    email: formElements.email.value,
-                    password: formElements.password.value,
-                    persistent: formElements.persistent.checked,
-                  };
-                  alert(JSON.stringify(data, null, 2));
-                }}
+                onSubmit={handleSubmit}
               >
                 <FormControl required>
                   <FormLabel sx={{ fontSize: "1.2rem" }}>Email</FormLabel>
                   <Input
                     type="email"
+                    value={email}
                     name="email"
+                    onChange={(e) => setEmail(e.target.value)}
                     sx={{ height: 60, fontSize: "1.8rem", padding: "15px" }}
                   />
-                </FormControl>
+                </FormControl >
                 <FormControl required>
                   <FormLabel sx={{ fontSize: "1.2rem" }}>Password</FormLabel>
                   <Input
                     type="password"
                     name="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     sx={{ height: 60, fontSize: "1.8rem", padding: "15px" }}
                   />
                 </FormControl>
