@@ -1,8 +1,8 @@
 import * as React from "react";
 import Box from "@mui/joy/Box";
-import Sidebar from "./Sidebar"; 
-import Header from "./Header";
-import UserTable from "./UserTable";
+import Sidebar from "../components/Sidebar"; 
+import Header from "../components/Header";
+import UserTable from "../components/UserTable";
 import { Typography, Button, Modal, ModalDialog, Input, Stack } from "@mui/joy";
 
 export default function Users() {
