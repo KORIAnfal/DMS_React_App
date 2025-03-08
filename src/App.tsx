@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Users from "./pages/Users";
 import Dashboard from "./pages/Dashboard";
+import Documents from "./pages/Documents";
 import Login from "./pages/Login";
 import { useSelector } from "react-redux";
 import { RootState } from "./store/store";
@@ -19,6 +20,7 @@ function App() {
       <Route path="/" element={<Login />} /> 
       <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
       <Route path="/users" element={<ProtectedRoute><Users /></ProtectedRoute>} />
+      <Route path="/documents" element={<ProtectedRoute><Documents /></ProtectedRoute>} />
     </Routes>
     </CssVarsProvider>
   );

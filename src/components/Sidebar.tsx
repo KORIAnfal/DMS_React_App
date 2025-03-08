@@ -170,10 +170,10 @@ export default function Sidebar() {
           <ListItem nested>
             <Toggler
               renderToggle={({ open, setOpen }) => (
-                <ListItemButton onClick={() => setOpen(!open)}>
+                <ListItemButton component={Link} to="/documents">
                   <AssignmentRoundedIcon />
                   <ListItemContent>
-                    <Typography level="title-sm">All Files</Typography>
+                    <Typography level="title-sm">Documents</Typography>
                   </ListItemContent>
                   <KeyboardArrowDownIcon
                     sx={[
@@ -185,16 +185,17 @@ export default function Sidebar() {
                             transform: "none",
                           },
                     ]}
+                    onClick={() => setOpen(!open)}
                   />
                 </ListItemButton>
               )}
             >
               <List sx={{ gap: 0.5 }}>
                 <ListItem sx={{ mt: 0.5 }}>
-                  <ListItemButton>All tasks</ListItemButton>
+                  <ListItemButton>All Documents</ListItemButton>
                 </ListItem>
                 <ListItem>
-                  <ListItemButton>Backlog</ListItemButton>
+                  <ListItemButton>Recently Added</ListItemButton>
                 </ListItem>
                 <ListItem>
                   <ListItemButton>In progress</ListItemButton>

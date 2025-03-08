@@ -25,7 +25,7 @@ export default function Users() {
       <Sidebar />
       <Box sx={{ flexGrow: 1, p: 3 }}>
         <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 2 }}>
-          <Typography level="h1" sx={{ fontSize: "2.5rem", fontWeight: "bold" }}>
+          <Typography level="h2" sx={{ fontSize: "2rem", fontWeight: "bold" }}>
             Users
           </Typography>
           <Button variant="solid" color="primary" onClick={handleOpen}>
