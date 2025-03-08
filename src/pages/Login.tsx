@@ -1,6 +1,8 @@
 import * as React from "react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useDispatch, useSelector } from "react-redux";
+import { login, setEmail, setPassword } from "../store/authSlice";
+import { RootState } from "../store/store";
+import { useNavigate } from "react-router-dom";
 import { CssVarsProvider, extendTheme, useColorScheme } from "@mui/joy/styles";
 import GlobalStyles from "@mui/joy/GlobalStyles";
 import CssBaseline from "@mui/joy/CssBaseline";
@@ -29,14 +31,17 @@ interface SignInFormElement extends HTMLFormElement {
 
 
 export default function Login() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
+  const email = useSelector((state: RootState) => state.auth.email); 
+  const password = useSelector((state: RootState) => state.auth.password);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (email === "admin@dmsgo.com" && password === "123") {
-      navigate("/dashboard"); 
+      dispatch(login());
+      navigate("/dashboard");
     } else {
       alert("Invalid login credentials!");
     }
@@ -136,7 +141,7 @@ export default function Login() {
                     type="email"
                     value={email}
                     name="email"
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => dispatch(setEmail(e.target.value))}
                     sx={{ height: 60, fontSize: "1.8rem", padding: "15px" }}
                   />
                 </FormControl >
@@ -146,7 +151,7 @@ export default function Login() {
                     type="password"
                     name="password"
                     value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => dispatch(setPassword(e.target.value))}
                     sx={{ height: 60, fontSize: "1.8rem", padding: "15px" }}
                   />
                 </FormControl>
