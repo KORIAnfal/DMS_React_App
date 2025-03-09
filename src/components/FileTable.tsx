@@ -32,56 +32,47 @@ import AutorenewRoundedIcon from '@mui/icons-material/AutorenewRounded';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
+import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 
 const rows = [
   {
     id: 'INV-1233',
-    name: 'Steve Hampton',
-
+    name: 'Report_Q1.pdf',
   },
   {
     id: 'INV-1232',
-    name: 'Ciaran Murray',
-
+    name: 'Presentation_Slides.pptx',
   },
   {
     id: 'INV-1231',
-    name: 'Maria Macdonald',
-
+    name: 'Financial_Statement.xlsx',
   },
   {
     id: 'INV-1230',
-    name: 'Charles Fulton',
-
+    name: 'Meeting_Notes.docx',
   },
   {
     id: 'INV-1229',
-    name: 'Jay Hooper',
-
+    name: 'Project_Proposal.pdf',
   },
   {
     id: 'INV-1228',
-    name: 'Krystal Stevens',
-
+    name: 'Client_Feedback.txt',
   },
   {
     id: 'INV-1227',
-    name: 'Sachin Flynn',
-
+    name: 'Invoice_2024_01.pdf',
   },
   {
     id: 'INV-1226',
-    name: 'Bradley Rosales',
-
+    name: 'Contract_Agreement.docx',
   },
   {
     id: 'INV-1225',
-    name: 'Olivia Ryhe',
-
+    name: 'Budget_Report.xlsx',
   },
- 
-  
 ];
+
 
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
@@ -119,7 +110,7 @@ function RowMenu() {
       </MenuButton>
       <Menu size="sm" sx={{ minWidth: 140 }}>
         <MenuItem>Edit</MenuItem>
-        <MenuItem>Rename</MenuItem>
+        <MenuItem>View</MenuItem>
         <MenuItem style={{color: 'red'}}>Delete</MenuItem>
       </Menu>
     </Dropdown>
@@ -226,7 +217,7 @@ export default function OrderTable() {
         >
           <thead>
             <tr>
-              <th style={{ width: 48, textAlign: 'center', padding: '12px 6px' }}>
+              <th style={{ width: 10, textAlign: 'center', padding: '12px 6px' }}>
                 <Checkbox
                   size="sm"
                   indeterminate={
@@ -246,8 +237,9 @@ export default function OrderTable() {
                   sx={{ verticalAlign: 'text-bottom' }}
                 />
               </th>
-              <th style={{ width: 140, padding: '12px 6px' }}>Files</th>
-              <th style={{ width: 140, padding: '12px 6px' }}> </th>
+              <th style={{ width: 8, textAlign: 'center', padding: '10px 2px' }}></th>
+              <th style={{ width: 340, padding: '12px 6px' }}>Files</th>
+              <th style={{ width: 40, padding: '12px 6px' }}> </th>
             </tr>
           </thead>
           <tbody>
@@ -269,6 +261,9 @@ export default function OrderTable() {
                     sx={{ verticalAlign: 'text-bottom' }}
                   />
                 </td>
+                <td style={{ textAlign: 'center' }}>
+              <InsertDriveFileIcon fontSize="small" color="action" />
+            </td>
                 <td>
                   <Typography level="body-xs">{row.name}</Typography>
                 </td>
