@@ -1,8 +1,8 @@
 import * as React from "react";
 import Box from "@mui/joy/Box";
 import Sidebar from "../components/Sidebar"; 
-import { Button, Typography } from "@mui/joy";
-import UserList from "../components/UserList"; 
+import { Button, Divider, Typography } from "@mui/joy";
+import FileTable from "../components/FileTable"; 
 
 export default function Documents() {
   return (
@@ -15,11 +15,19 @@ export default function Documents() {
           <Typography level="h2" sx={{ fontSize: "2rem", fontWeight: "bold" }}>
             Documents
           </Typography>
+          <Box> 
+          <Button variant="solid" color="primary" onClick={() => console.log("Add User clicked")}>
+            + Create Folder
+          </Button>
+          
           <Button variant="solid" color="primary" onClick={() => console.log("Add User clicked")}>
             + Add File
           </Button>
-        </Box>
 
+          </Box>
+        </Box>
+         
+         <FileTable/>
         
         
       </Box>
