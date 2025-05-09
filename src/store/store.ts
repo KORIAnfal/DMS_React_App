@@ -1,9 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./authSlice";
+import fileUploadReducer from "./fileUploadSlice";
 
 const store = configureStore({
   reducer: {
     auth: authReducer,
+    fileUpload: fileUploadReducer,
+    
   },
 });
 
